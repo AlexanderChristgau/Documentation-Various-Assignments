@@ -169,7 +169,7 @@ cross_val <- function(reps,model,dataset){
   ans <- rep(0,reps)
   for (i in 1:reps) {
     k <- nrow(dataset)
-    train = sample(1:k, k*0.8)
+    train = sample(1:k, k*0.8)  #We choose a classical 80/20 train/test split
     test = (-train)
     dataset_train = dataset[train,] 
     dataset_test = dataset[test,]
